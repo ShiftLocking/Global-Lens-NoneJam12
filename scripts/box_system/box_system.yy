@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"box_system",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"box_system",
+  "parent":{
+    "name":"Box",
+    "path":"folders/ShiftLibrary/Dialogues/System/Box.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

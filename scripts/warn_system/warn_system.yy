@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"warn_system",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"warn_system",
+  "parent":{
+    "name":"Warn",
+    "path":"folders/ShiftLibrary/Dialogues/System/Warn.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

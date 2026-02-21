@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"keybinds_mapping",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"keybinds_mapping",
+  "parent":{
+    "name":"Keybinds",
+    "path":"folders/ShiftLibrary/Keybinds.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

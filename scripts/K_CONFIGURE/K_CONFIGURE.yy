@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"K_CONFIGURE",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"K_CONFIGURE",
+  "parent":{
+    "name":"Keybinds",
+    "path":"folders/ShiftLibrary/Keybinds.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

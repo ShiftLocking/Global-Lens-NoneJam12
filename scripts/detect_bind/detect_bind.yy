@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"detect_bind",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"detect_bind",
+  "parent":{
+    "name":"Binds",
+    "path":"folders/ShiftLibrary/Interact/Binds.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

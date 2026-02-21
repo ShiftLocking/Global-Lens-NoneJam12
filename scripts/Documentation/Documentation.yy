@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Documentation",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Documentation",
+  "parent":{
+    "name":"System",
+    "path":"folders/ShiftLibrary/OutilineFX/System.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

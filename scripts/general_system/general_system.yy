@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"general_system",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"general_system",
+  "parent":{
+    "name":"System",
+    "path":"folders/ShiftLibrary/Dialogues/System.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

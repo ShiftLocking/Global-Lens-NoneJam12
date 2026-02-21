@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"outline_init",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"outline_init",
+  "parent":{
+    "name":"System",
+    "path":"folders/ShiftLibrary/OutilineFX/System.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

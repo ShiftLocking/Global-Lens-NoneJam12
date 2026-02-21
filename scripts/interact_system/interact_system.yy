@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"interact_system",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"interact_system",
+  "parent":{
+    "name":"Interact",
+    "path":"folders/ShiftLibrary/Interact.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

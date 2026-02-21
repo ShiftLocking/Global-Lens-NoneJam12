@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"transition_system",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"transition_system",
+  "parent":{
+    "name":"Transition",
+    "path":"folders/ShiftLibrary/Transition.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,5 +1,3 @@
-
-
 function apr(_val1, _val2, _apr)
 {
 	if (_val1 < _val2)

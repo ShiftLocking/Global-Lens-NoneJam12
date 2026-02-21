@@ -22,6 +22,11 @@ ini = function()
     }
     
     alpha = lerp(alpha, .5, .1);
+    
+    if (alpha >= .4)
+    {
+        global.visible_objects_lens = true;
+    }
 }
 
 close = function()
@@ -31,6 +36,7 @@ close = function()
         draw_surface(surface, 0, 0);
     }
     alpha = lerp(alpha, 0, .05);
+    global.visible_objects_lens = false;
     
     if (alpha <= .01) 
     {

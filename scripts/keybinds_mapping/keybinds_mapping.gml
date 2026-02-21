@@ -335,8 +335,8 @@ function movement()
     if (global.use_joystick)
     {
         //Define a direção com base nos controles
-        Hdir = input("horizontal", "normal","axis");
-        Vdir = input("vertical", "normal","axis");
+        Hdir = input("horizontal", "normal", "axis");
+        Vdir = input("vertical", "normal", "axis");
     }
     else 
     {
@@ -352,7 +352,7 @@ function movement()
     {
         Hdir,
         Vdir
-    }
+    };
 }
 
 adding_patterns = function()

@@ -34,3 +34,4 @@ show_debug_message("Lens " + string(global.lens));
 show_debug_message("Stopped " + string(global.stopped));
 show_debug_message("Effect " + string(global.lens_effect));
 show_debug_message("Push " + string(global.push));
+show_debug_message("Inside " + string(global.inside_object));

@@ -67,6 +67,7 @@ move = function()
         }
     }
     
+    if (global.push) exit; 
     //Se ele pular, a quantidade de pulos for maior que 0 e o VSPD for igual a 0
     if (_jump && jump_count > 0 && vspd == 0)
     {
@@ -117,28 +118,36 @@ change = function()
     //Se os oculos não foram colocados
     if (!global.lens)
     {
-        set_sprite(spr_player_activating);
-        //Variavel que pega a quantidade de frames da sprite atual
-        var _image_amount = sprite_get_number(sprite_index) - 1;
-        //Ativa a variavel responsavel por parar o player
-        global.stopped = true;
-        what_state = "activating";
-        
-        if (!instance_exists(obj_lens_effect))
+        if (!global.inside_object)
         {
-            instance_create_layer(0, 0, "Lens_Effect", obj_lens_effect);
+            set_sprite(spr_player_activating);
+            //Variavel que pega a quantidade de frames da sprite atual
+            var _image_amount = sprite_get_number(sprite_index) - 1;
+            //Ativa a variavel responsavel por parar o player
+            global.stopped = true;
+            what_state = "activating";
+            
+            if (!instance_exists(obj_lens_effect))
+            {
+                instance_create_layer(0, 0, "Lens_Effect", obj_lens_effect);
+            }
+            
+            //Se a imagem atual do sprite for maior que a imagem total da sprite
+            if (image_index > _image_amount)
+            {
+                //Os oculos são colocados
+                global.lens = true; 
+                //Desativa a variavel responsavel por parar o player
+                global.stopped = false;
+                //Ativa o efeito do oculos
+                global.lens_effect = true;
+                //Reseta a ação
+                action = reset;
+            }
         }
-        
-        //Se a imagem atual do sprite for maior que a imagem total da sprite
-        if (image_index > _image_amount)
+        else 
         {
-            //Os oculos são colocados
-            global.lens = true; 
-            //Desativa a variavel responsavel por parar o player
-            global.stopped = false;
-            //Ativa o efeito do oculos
-            global.lens_effect = true;
-            //Reseta a ação
+        	//Reseta a ação
             action = reset;
         }
     }
@@ -168,11 +177,47 @@ change = function()
 push = function()
 {
     what_state = "push";
+    if (instance_exists(obj_box))
+    {
+        var _nereast = instance_nearest(x, y, obj_box);
+        //Se o modo de empurrar estiver ativado
+        if (global.push)
+        {
+            if (place_meeting(x + sign(hspd), y, _nereast))
+            {
+                _nereast.hspd = hspd;
+            }
+            
+            with (_nereast)
+            {
+                var _next = instance_place(x + sign(other.hspd), y, obj_box);
+                
+                if (_next != noone)
+                {
+                    _next.hspd = other.hspd;
+                }
+            }
+        }
+    }
 }
 
 idle_push = function()
 {
     what_state = "idle_push";
+    
+    if (instance_exists(obj_box))
+    {
+        var _nereast = instance_nearest(x, y, obj_box);
+        //Se o modo de empurrar estiver ativado
+        if (global.push)
+        {
+            _nereast.hspd = hspd;
+        }
+        else 
+        {
+        	_nereast.hspd = 0;
+        }
+    }
 }
 
 gravity_system = function()

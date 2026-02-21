@@ -17,6 +17,7 @@
     {"$GMFolder":"","%Name":"Codes","folderPath":"folders/Objects/Player/Codes.yy","name":"Codes","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Pushable Objects","folderPath":"folders/Objects/Pushable Objects.yy","name":"Pushable Objects","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Scenes","folderPath":"folders/Scenes.yy","name":"Scenes","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Introduction","folderPath":"folders/Scenes/Introduction.yy","name":"Introduction","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Scripts","folderPath":"folders/Scripts.yy","name":"Scripts","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Sequences","folderPath":"folders/Sequences.yy","name":"Sequences","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"ShiftLibrary","folderPath":"folders/ShiftLibrary.yy","name":"ShiftLibrary","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -79,6 +80,7 @@
     {"id":{"name":"toast","path":"objects/toast/toast.yy",},},
     {"id":{"name":"transition","path":"objects/transition/transition.yy",},},
     {"id":{"name":"warn","path":"objects/warn/warn.yy",},},
+    {"id":{"name":"rm_introduction_1","path":"rooms/rm_introduction_1/rm_introduction_1.yy",},},
     {"id":{"name":"rm_teste","path":"rooms/rm_teste/rm_teste.yy",},},
     {"id":{"name":"__scribble_class_element","path":"scripts/__scribble_class_element/__scribble_class_element.yy",},},
     {"id":{"name":"__scribble_class_event","path":"scripts/__scribble_class_event/__scribble_class_event.yy",},},
@@ -249,6 +251,7 @@
     {"id":{"name":"spr_boxes","path":"sprites/spr_boxes/spr_boxes.yy",},},
     {"id":{"name":"spr_collision","path":"sprites/spr_collision/spr_collision.yy",},},
     {"id":{"name":"spr_lens","path":"sprites/spr_lens/spr_lens.yy",},},
+    {"id":{"name":"spr_nocollision","path":"sprites/spr_nocollision/spr_nocollision.yy",},},
     {"id":{"name":"spr_player_activating","path":"sprites/spr_player_activating/spr_player_activating.yy",},},
     {"id":{"name":"spr_player_disabling","path":"sprites/spr_player_disabling/spr_player_disabling.yy",},},
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
@@ -257,6 +260,7 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"roomId":{"name":"rm_teste","path":"rooms/rm_teste/rm_teste.yy",},},
+    {"roomId":{"name":"rm_introduction_1","path":"rooms/rm_introduction_1/rm_introduction_1.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

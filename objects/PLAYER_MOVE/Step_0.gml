@@ -22,3 +22,4 @@ else
 
 show_debug_message("Lens " + string(global.lens));
 show_debug_message("Stopped " + string(global.stopped));
+show_debug_message("Effect " + string(global.lens_effect));

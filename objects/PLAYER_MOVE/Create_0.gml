@@ -98,6 +98,12 @@ change = function()
         //Ativa a variavel responsavel por parar o player
         global.stopped = true;
         what_state = "activating";
+        
+        if (!instance_exists(obj_lens_effect))
+        {
+            instance_create_layer(0, 0, "Lens_Effect", obj_lens_effect);
+        }
+        
         //Se a imagem atual do sprite for maior que a imagem total da sprite
         if (image_index > _image_amount)
         {
@@ -105,6 +111,8 @@ change = function()
             global.lens = true; 
             //Desativa a variavel responsavel por parar o player
             global.stopped = false;
+            //Ativa o efeito do oculos
+            global.lens_effect = true;
             //Reseta a ação
             action = reset;
         }
@@ -124,6 +132,8 @@ change = function()
             global.lens = false;
             //Desativa a variavel responsavel por parar o player
             global.stopped = false;
+            //Desativa o efeito do oculos
+            global.lens_effect = false;
             //Reseta a ação
             action = reset;
         }

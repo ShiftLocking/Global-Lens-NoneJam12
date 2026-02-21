@@ -3,7 +3,9 @@
 
 hspd = 0;
 vspd = 0;
-spd = 4;
+normal_spd = 4;
+push_spd = 2;
+spd = normal_spd;
 acc = .6;
 dcc = .4;
 
@@ -27,19 +29,42 @@ move = function()
     {
         //Pega a direção para onde está se movendo
         var _direction = point_direction(0, 0, d.Hdir, 0);
-        //Aplica a direção no movimento com uma velocidade
-        var _movement = lengthdir_x(spd, _direction);
-        //Aplica o movimento suavemente no HSPD
-        hspd = apr(hspd, _movement, acc);
-        //Define a ação
-        action = walk;
+        if (!global.push)
+        {
+            //Aplica a direção no movimento com uma velocidade
+            var _movement = lengthdir_x(spd * abs(d.Hdir), _direction);
+            //Aplica o movimento suavemente no HSPD
+            hspd = apr(hspd, _movement, acc);
+            //Define a ação
+            action = walk;
+        }
+        else 
+        {
+            var _dir_sign = (global.direction == 0) ? 1 : -1;
+
+            // Só aplica se bater com d.Hdir
+            if (sign(d.Hdir) == _dir_sign)
+            {
+                var _movement = lengthdir_x(spd * abs(d.Hdir), global.direction);
+                hspd = _movement;
+                action = push;
+            }
+        }
     }
     else //Caso não estiver 
     {
-        //Zera o HSPD suavemente
-    	hspd = apr(hspd, 0, dcc);
-        //Define a ação
-        action = idle;
+        if (!global.push)
+        {
+            //Zera o HSPD suavemente
+    	    hspd = apr(hspd, 0, dcc);
+            //Define a ação
+            action = idle;
+        }
+        else 
+        {
+        	hspd = 0;
+            action = idle_push;
+        }
     }
     
     //Se ele pular, a quantidade de pulos for maior que 0 e o VSPD for igual a 0
@@ -140,6 +165,16 @@ change = function()
     }
 }
 
+push = function()
+{
+    what_state = "push";
+}
+
+idle_push = function()
+{
+    what_state = "idle_push";
+}
+
 gravity_system = function()
 {
     //Se o objeto não estiver colidindo 1 pixel abaixo
@@ -172,6 +207,7 @@ collision = function()
         //Caso colidir na horizontal
         if (place_meeting(x + sign(hspd), y, obj_collision))
         {
+            if (global.push) break;
             //Vai zerar o hspd
             hspd = 0;
             break; //E parar o código

@@ -93,7 +93,7 @@ function create_toast(_sprite, _text, _font, _layer, _posy, _object, _distance, 
                 if (!instance_exists(toast))
                 {
                     //Cria o toast
-                    t.new_toast = instance_create_layer(x, y - (sprite_height / 2), "Text", toast);
+                    t.new_toast = instance_create_layer(x, y - (sprite_height / 2), _layer, toast);
                     //Define a sprite
                     t.new_toast.sprite = _sprite;
                     //Define o texto

@@ -2,6 +2,7 @@
 // You can write your code in this editor
 
 surface = noone;
+alpha = 0;
 
 ini = function()
 {
@@ -19,9 +20,20 @@ ini = function()
     {
         draw_surface(surface, 0, 0);
     }
+    
+    alpha = lerp(alpha, .5, .1);
 }
 
 close = function()
 {
-    instance_destroy();
+    if (surface_exists(surface))
+    {
+        draw_surface(surface, 0, 0);
+    }
+    alpha = lerp(alpha, 0, .05);
+    
+    if (alpha <= .01) 
+    {
+        instance_destroy();
+    }
 }

@@ -11,11 +11,14 @@
   "defaultScriptType":1,
   "Folders":[
     {"$GMFolder":"","%Name":"Cam","folderPath":"folders/Cam.yy","name":"Cam","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Fonts","folderPath":"folders/Fonts.yy","name":"Fonts","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Objects","folderPath":"folders/Objects.yy","name":"Objects","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Player","folderPath":"folders/Objects/Player.yy","name":"Player","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Codes","folderPath":"folders/Objects/Player/Codes.yy","name":"Codes","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Pushable Objects","folderPath":"folders/Objects/Pushable Objects.yy","name":"Pushable Objects","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Scenes","folderPath":"folders/Scenes.yy","name":"Scenes","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Scripts","folderPath":"folders/Scripts.yy","name":"Scripts","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Sequences","folderPath":"folders/Sequences.yy","name":"Sequences","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"ShiftLibrary","folderPath":"folders/ShiftLibrary.yy","name":"ShiftLibrary","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Dialogues","folderPath":"folders/ShiftLibrary/Dialogues.yy","name":"Dialogues","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"System","folderPath":"folders/ShiftLibrary/Dialogues/System.yy","name":"System","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -63,8 +66,10 @@
   },
   "name":"Global-Lens-(NoneJam12)",
   "resources":[
+    {"id":{"name":"fnt_sla","path":"fonts/fnt_sla/fnt_sla.yy",},},
     {"id":{"name":"scribble_fallback_font","path":"fonts/scribble_fallback_font/scribble_fallback_font.yy",},},
     {"id":{"name":"box","path":"objects/box/box.yy",},},
+    {"id":{"name":"obj_box","path":"objects/obj_box/obj_box.yy",},},
     {"id":{"name":"obj_cam","path":"objects/obj_cam/obj_cam.yy",},},
     {"id":{"name":"obj_collision","path":"objects/obj_collision/obj_collision.yy",},},
     {"id":{"name":"obj_fps","path":"objects/obj_fps/obj_fps.yy",},},
@@ -241,7 +246,9 @@
     {"id":{"name":"Keybinds","path":"sprites/Keybinds/Keybinds.yy",},},
     {"id":{"name":"rectangle","path":"sprites/rectangle/rectangle.yy",},},
     {"id":{"name":"scribble_fallback_bulletpoint","path":"sprites/scribble_fallback_bulletpoint/scribble_fallback_bulletpoint.yy",},},
+    {"id":{"name":"spr_boxes","path":"sprites/spr_boxes/spr_boxes.yy",},},
     {"id":{"name":"spr_collision","path":"sprites/spr_collision/spr_collision.yy",},},
+    {"id":{"name":"spr_lens","path":"sprites/spr_lens/spr_lens.yy",},},
     {"id":{"name":"spr_player_activating","path":"sprites/spr_player_activating/spr_player_activating.yy",},},
     {"id":{"name":"spr_player_disabling","path":"sprites/spr_player_disabling/spr_player_disabling.yy",},},
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
@@ -253,6 +260,6 @@
   ],
   "templateType":"game",
   "TextureGroups":[
-    {"$GMTextureGroup":"","%Name":"Default","autocrop":true,"border":2,"compressFormat":"bz2","customOptions":"","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"name":"Default","resourceType":"GMTextureGroup","resourceVersion":"2.0","targets":-1,},
+    {"$GMTextureGroup":"","%Name":"Default","autocrop":false,"border":8,"compressFormat":"bz2","customOptions":"","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"name":"Default","resourceType":"GMTextureGroup","resourceVersion":"2.0","targets":-1,},
   ],
 }

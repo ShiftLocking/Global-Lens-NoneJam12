@@ -76,6 +76,7 @@
     {"id":{"name":"obj_fps","path":"objects/obj_fps/obj_fps.yy",},},
     {"id":{"name":"obj_lens_effect","path":"objects/obj_lens_effect/obj_lens_effect.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
+    {"id":{"name":"obj_teste","path":"objects/obj_teste/obj_teste.yy",},},
     {"id":{"name":"PLAYER_MOVE","path":"objects/PLAYER_MOVE/PLAYER_MOVE.yy",},},
     {"id":{"name":"toast","path":"objects/toast/toast.yy",},},
     {"id":{"name":"transition","path":"objects/transition/transition.yy",},},
@@ -259,8 +260,8 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"rm_teste","path":"rooms/rm_teste/rm_teste.yy",},},
     {"roomId":{"name":"rm_introduction_1","path":"rooms/rm_introduction_1/rm_introduction_1.yy",},},
+    {"roomId":{"name":"rm_teste","path":"rooms/rm_teste/rm_teste.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

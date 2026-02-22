@@ -1,8 +1,4 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-_x_to = undefined;
-_y_to = undefined;
-
-view_target = obj_teste;
-view_speed = .08;
+full = false;

@@ -5,3 +5,13 @@ global.push = false;
 global.direction = 0;
 global.visible_objects_lens = false;
 global.inside_object = false;
+
+global.resolution_width_no_fullscreen = (display_get_width() * 85) / 100;
+global.resolution_height_no_fullscreen = (display_get_height() * 85) / 100;
+
+global.resolution_width_fullscreen = display_get_width();
+global.resolution_height_fullscreen = display_get_height();
+
+global.resolution_width = global.resolution_width_no_fullscreen;
+global.resolution_height = global.resolution_height_no_fullscreen;
+global.resolution_scale = global.resolution_width / global.resolution_height;

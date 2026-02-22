@@ -3,11 +3,11 @@
 
 view_enabled = true;
 view_visible[0] = true;
-global.width = resolution_width / resolution_scale;
-global.height = resolution_height / resolution_scale;
+global.width = global.resolution_width / global.resolution_scale;
+global.height = global.resolution_height / global.resolution_scale;
 camera_set_view_size(view_camera[0], global.width, global.height);
-window_set_size(global.width * resolution_scale, global.height * resolution_scale);
-surface_resize(application_surface, global.width * resolution_scale, global.height * resolution_scale);
+window_set_size(global.width * global.resolution_scale, global.height * global.resolution_scale);
+surface_resize(application_surface, global.width * global.resolution_scale, global.height * global.resolution_scale);
 display_set_gui_size(global.width, global.height);
 window_center();
 if (instance_exists(view_target))

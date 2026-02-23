@@ -12,7 +12,8 @@ skip_input = undefined;
 
 //NÃO MEXA
 iniy = y;
-toastx = x;
+inix = x;
+toastx = inix;
 toasty = iniy;
 xscale = 0;
 yscale = 0;

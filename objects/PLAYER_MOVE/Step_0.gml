@@ -30,6 +30,21 @@ else
 	spd = normal_spd;
 }
 
+if (hspd != 0)
+{
+    dir = sign(hspd);
+}
+
+effect_xscale = lerp(effect_xscale, 0, .1);
+effect_yscale = lerp(effect_yscale, 0, .1);
+
+if (atual_action != action)
+{
+    effect_done = false;
+    atual_action = action;
+}
+
+/*
 show_debug_message("Lens " + string(global.lens));
 show_debug_message("Stopped " + string(global.stopped));
 show_debug_message("Effect " + string(global.lens_effect));

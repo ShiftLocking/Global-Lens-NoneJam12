@@ -8,30 +8,54 @@ if (global.lens)
     push_system();
 }
 
+if (global.activate_collision)
+{
+    //Define a colisão
+    mask_index = sprite_index;
+}
+
 //Se os objetos podem ser vistos
 if (global.visible_objects_lens)
 {
     //Aumenta a transparencia suavemente
     alpha = lerp(alpha, 1, .1);
-    //Define a colisão
-    mask_index = sprite_index;
     gravity_system();
 }
 else //Se os objetos não podem ser vistos
 {
     //Diminui a trasparencia suavemente
 	alpha = lerp(alpha, 0, .8);
-    //Reseta a colisão
-    mask_index = spr_nocollision;
+    
+    if (!global.activate_collision)
+    {
+        //Reseta a colisão
+        mask_index = spr_nocollision;
+    }
     
     //Variaveis de distancia
-    var _nereast = instance_nearest(instance_target.x, instance_target.y, object_index);
-    var _player_dist_horizontal = point_distance(_nereast.x, 0, instance_target.x, 0);
-    var _player_dist_vertical = point_distance(0, _nereast.y, 0, instance_target.y);
+    var _nearest = instance_nearest(instance_target.x, instance_target.y, object_index);
     
-    if (_player_dist_horizontal <= sprite_width / 1.5 && _player_dist_vertical <= sprite_height)
+    if (_nearest != noone)
     {
-        global.inside_object = true;
+        // sprite ORIGINAL do objeto (não da instância)
+        var _spr = _nearest.object_index.sprite_index;
+    
+        // posição do sprite no mundo
+        var _x = _nearest.x - sprite_get_xoffset(_spr);
+        var _y = _nearest.y - sprite_get_yoffset(_spr);
+    
+        var _w = sprite_get_width(_spr);
+        var _h = sprite_get_height(_spr);
+    
+        // colisão pixel-perfect real
+        if (collision_rectangle(_x, _y, _x + _w, _y + _h, instance_target, false, true))
+        {
+            global.inside_object = true;
+        }
+        else
+        {
+            global.inside_object = false;
+        }
     }
     else
     {

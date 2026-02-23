@@ -177,11 +177,12 @@ function open_toast()
         //Despausa a maquina de escrever
         write_machine.unpause();
         
+        var _input = get_bind_name_from_key(skip_input);
+        var _skip = write_machine.get_state();
+        
         if (interact_toast)
         {
             skip_alpha = lerp(skip_alpha, 1, .2);
-            var _input = get_bind_name_from_key(skip_input);
-            var _skip = write_machine.get_state();
             
             if (input(_input, "pressed", "button"))
             {
@@ -230,6 +231,13 @@ function open_toast()
             	skiped = false;
             }
         }
+        else 
+        {
+        	if (_skip == 1)
+            {
+                global.TOASTFINISHED = true;
+            }
+        }
     }
     else //Caso for menor
     {
@@ -251,7 +259,7 @@ function close_toast()
     
     //Volta o toast para sua posição inicial
     toasty = lerp(toasty, iniy, .1);
-    toastx = lerp(toastx, x, .5);
+    toastx = lerp(toastx, inix, .5);
     //Diminui suavemente a transparencia do texto
     alpha = lerp(alpha, 0, .4);
     skip_alpha = lerp(skip_alpha, 0, .2);

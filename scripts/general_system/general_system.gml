@@ -1,4 +1,5 @@
 global.DIALOGUE = false;
+global.TOASTFINISHED = false;
 
 /// @desc Essa função irá criar um toast caso você chegar perto ou interagir com o objeto
 /// @param {Asset.GMSprite} _sprite Sprite que será utilizado pelo toast
@@ -320,6 +321,17 @@ function get_in_dialogue()
 {
     if (global.DIALOGUE)
     {
+        return true;
+    }
+    
+    return false;
+}
+
+function get_toast_finished()
+{
+    if (global.TOASTFINISHED)
+    {
+        global.TOASTFINISHED = false;
         return true;
     }
     

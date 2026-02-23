@@ -6,7 +6,7 @@ instance_target = obj_player;
 hspd = 0;
 vspd = 0;
 grv = .4;
-max_grv = 15;
+max_vspd = 15;
 outline = false;
 can_push = false;
 
@@ -32,7 +32,7 @@ push_system = function()
         if (_player_dist <= initial_distance)
         { 
             //Se a distancia vertical for igual a 0
-            if (_player_vertical_dist == 0)
+            if (_player_vertical_dist == 0 && instance_target.vspd == 0)
             {
                 //Variavel que pega a direção da instancia em relação ao objeto
                 var dx = instance_target.x - _nereast.x;
@@ -87,6 +87,12 @@ push_system = function()
             //Desativa o contorno
         	outline = false;
             hspd = 0;
+            
+            var _player_dist_nereast = point_distance(_nereast.x, 0, instance_target.x, 0);
+            if (_player_dist_nereast >= initial_distance)
+            {
+                global.push = false;
+            }
         }
     }
 }
@@ -101,7 +107,7 @@ gravity_system = function()
     }
     
     //Limitando VSPD
-    vspd = clamp(vspd, -max_grv, max_grv);
+    vspd = clamp(vspd, -max_vspd, max_vspd);
 }
 
 collision = function()

@@ -5,6 +5,7 @@ global.push = false;
 global.direction = 0;
 global.visible_objects_lens = false;
 global.inside_object = false;
+global.activate_collision = false;
 
 global.resolution_width_no_fullscreen = (display_get_width() * 85) / 100;
 global.resolution_height_no_fullscreen = (display_get_height() * 85) / 100;

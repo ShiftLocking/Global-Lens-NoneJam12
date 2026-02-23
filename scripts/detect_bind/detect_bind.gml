@@ -13,7 +13,7 @@ global.bind_icons = {
             0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14,
             15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27,
             28, 29, 30, 31, 32
-        ]
+        ],
     },
     joystick : {
         keys : [
@@ -27,7 +27,7 @@ global.bind_icons = {
             gp_stickl, gp_stickr
         ],
         axis_sprite : [
-            Joyaxispressed, Joyaxispressed
+            Axispressedleft, Axispressedright
         ],
         d_pad : [
             gp_padd, gp_padl, gp_padr, gp_padu
@@ -40,7 +40,7 @@ global.bind_icons = {
 
 /// @desc Essa função irá retornar a sprite da tecla colocada
 /// @param {Constant.VirtualKey or Constant.GamepadButton} _button Tecla que aparecerá
-function detection(_button)
+function detection(_button, _movement = false, _horizontalorvertical = undefined, _rightorleft)
 {
     //Criando as variaveis no objeto
     if (!variable_instance_exists(id, "d"))
@@ -55,52 +55,98 @@ function detection(_button)
     //Se estiver usando o controle
     if (global.use_joystick)
     {
-        //Laço de repetição pegando a quantidade de teclas que tem no controle
-        for (var i = 0; i < array_length(_data.keys); i++)
+        if (!_movement)
         {
-            //Se algumas dessas teclas for igual a tecla dada
-            if (_data.keys[i] == _button)
+            //Laço de repetição pegando a quantidade de teclas que tem no controle
+            for (var i = 0; i < array_length(_data.keys); i++)
             {
-                //Define a sprite
-                d.sprite = Joybinds;
-                //Para o laço
-                break;
+                //Se algumas dessas teclas for igual a tecla dada
+                if (_data.keys[i] == _button)
+                {
+                    //Define a sprite
+                    d.sprite = Joybinds;
+                    //Para o laço
+                    break;
+                }
+            }
+            
+            //Laço de repetição pegando a quantidade de axis que tem no controle
+            for (var i = 0; i < array_length(_data.axis); i++)
+            {
+                //Caso algumas dessas axis for igual a tecla dada
+                if (_data.axis[i] == _button)
+                {
+                    //Define a sprite
+                    d.sprite = _data.axis_sprite[i];
+                    //Para o laço
+                    break;
+                }
+            }
+            
+            //Laço de repetição pegando a quantidade de d-pads que tem no controle
+            for (var i = 0; i < array_length(_data.d_pad); i++)
+            {
+                //Se algumas dessas d-pads for igual a tecla dada
+                if (_data.d_pad[i] == _button)
+                {
+                    //Define a sprite
+                    d.sprite = _data.d_pad_sprite[i];
+                    //Para o laço
+                    break;
+                }
             }
         }
-        
-        //Laço de repetição pegando a quantidade de axis que tem no controle
-        for (var i = 0; i < array_length(_data.axis); i++)
+        else 
         {
-            //Caso algumas dessas axis for igual a tecla dada
-            if (_data.axis[i] == _button)
+        	switch (_horizontalorvertical) 
             {
-                //Define a sprite
-                d.sprite = _data.axis_sprite[i];
-                //Para o laço
+            	case "horizontal":
+                    if (_rightorleft == "right")
+                    {
+                        d.sprite = Axisrighthor;
+                    }
+                    else 
+                    {
+                    	d.sprite = Axislefthor;
+                    }
                 break;
-            }
-        }
-        
-        //Laço de repetição pegando a quantidade de d-pads que tem no controle
-        for (var i = 0; i < array_length(_data.d_pad); i++)
-        {
-            //Se algumas dessas d-pads for igual a tecla dada
-            if (_data.d_pad[i] == _button)
-            {
-                //Define a sprite
-                d.sprite = _data.d_pad_sprite[i];
-                //Para o laço
+                
+                case "vertical":
+                    if (_rightorleft == "right")
+                    {
+                        d.sprite = Axisrightver;
+                    }
+                    else 
+                    {
+                    	d.sprite = Axisleftver;
+                    }
                 break;
             }
         }
     }
     else //Caso não estiver usando controle
     {
-        //Caso a tecla dada estiver no formato correto
-        if (_button > 1)
+        if (!_movement)
         {
-            //Define a sprite
-            d.sprite = Keybinds;
+            //Caso a tecla dada estiver no formato correto
+            if (_button > 1)
+            {
+                //Define a sprite
+                d.sprite = Keybinds;
+            }
+        }
+        else 
+        {
+        	switch (_horizontalorvertical) 
+            {
+            	case "horizontal":
+                    d.sprite = HorArrows;
+                break;
+                
+                case "vertical":
+                    d.sprite = VerArrows;
+                break;
+            }
         }
     }
     

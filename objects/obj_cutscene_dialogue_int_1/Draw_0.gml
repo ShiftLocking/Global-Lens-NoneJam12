@@ -12,3 +12,7 @@ if (_finished)
 {
 	instance_destroy();
 }
+
+var s = detection(0, true, "horizontal", "left");
+
+draw_sprite(s.sprite, s.subming, x, y);

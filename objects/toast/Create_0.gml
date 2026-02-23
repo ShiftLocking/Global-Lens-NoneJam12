@@ -37,6 +37,7 @@ skiped = false;
 number_array = 0;
 array = false;
 lenght = 0;
+floating = true;
 
 sound = undefined;
 pitch_min = 0;

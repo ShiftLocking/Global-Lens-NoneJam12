@@ -15,19 +15,20 @@ if (input("reset", "pressed", "button"))
 
 if (keyboard_check_pressed(vk_f11))
 {
-    if (!full)
+    if (!global.fullscreen)
     {
         global.resolution_width = global.resolution_width_fullscreen;
         global.resolution_height = global.resolution_height_fullscreen;
-        full = true;
+        global.fullscreen = true;
     }
     else 
     {
     	global.resolution_width = global.resolution_width_no_fullscreen;
         global.resolution_height = global.resolution_height_no_fullscreen;
-        full = false;
+        global.fullscreen = false;
     }
 }
 
-window_enable_borderless_fullscreen(full);
-window_set_fullscreen(full);
+uptade_scale_resolution();
+window_enable_borderless_fullscreen(global.fullscreen);
+window_set_fullscreen(global.fullscreen);

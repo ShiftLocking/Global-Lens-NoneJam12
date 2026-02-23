@@ -8,3 +8,9 @@ function set_sprite(_spr, _index = 0)
         image_index = _index;
     }
 }
+
+function uptade_scale_resolution()
+{ 
+    global.resolution_scale = global.resolution_height / global.resolution_base;
+    if (!global.fullscreen) window_center();
+}

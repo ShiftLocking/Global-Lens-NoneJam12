@@ -9,7 +9,10 @@ function draw_toast(_ballonsprite, _text, _font)
         }
         //Executa o código de abrir
         open_toast();
-        float();
+        if (floating)
+        {
+            float();
+        }
     }
     else //Caso não for
     {
@@ -204,6 +207,8 @@ function open_toast()
                         }
                         else //Caso for igual
                         {
+							global.TOASTFINISHED = true;
+							global.DIALOGUE = false;
                             //Fecha o toast
                         	visible_toast = false;
                         }

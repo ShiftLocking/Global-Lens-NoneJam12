@@ -17,7 +17,7 @@ global.TOASTFINISHED = false;
 /// @param {Constant.VirtualKey or Constant.GamepadButton} _button Tecla que será usada na interação (A VARIAVEL _INPUT DEVE ESTAR VERDADEIRA)
 /// @param {Real} _interactposy Posição vertical do botão de interação
 /// @param {Constant.VirtualKey or Constant.GamepadButton} _skip_button Tecla que será usada para pular dialogo (A VARIAVEL _INPUT DEVE ESTAR VERDADEIRA)
-function create_toast(_sprite, _text, _font, _layer, _posy, _object, _distance, _sound = undefined, _pitchmin = 0, _pitchmax = 0, _gain = 0, _interact = false, _button = undefined, _interactposy = 0, _skip_button = undefined)
+function create_toast(_sprite, _text, _font, _layer, _posy, _object, _distance, _float = true, _sound = undefined, _pitchmin = 0, _pitchmax = 0, _gain = 0, _interact = false, _button = undefined, _interactposy = 0, _skip_button = undefined)
 {
     //Criando as variaveis no objeto
     if (!variable_instance_exists(id, "t"))
@@ -44,6 +44,8 @@ function create_toast(_sprite, _text, _font, _layer, _posy, _object, _distance, 
                 t.new_toast.finy = _posy;
                 //Define a fonte
                 t.new_toast.font = _font;
+                //Define a flutuação
+                t.new_toast.floating = _float;
                 
                 if (!is_undefined(_sound))
                 {
@@ -121,6 +123,8 @@ function create_toast(_sprite, _text, _font, _layer, _posy, _object, _distance, 
                     t.new_toast.font = _font;
                     //Faz ele ser interagivel
                     t.new_toast.interact_toast = _interact;
+                    //Define a flutuação
+                    t.new_toast.floating = _float;
                     
                     if (!is_undefined(_sound))
                     {

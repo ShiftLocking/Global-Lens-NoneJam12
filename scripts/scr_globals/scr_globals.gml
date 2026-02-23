@@ -19,4 +19,9 @@ global.resolution_height_fullscreen = display_get_height();
 
 global.resolution_width = global.resolution_width_no_fullscreen;
 global.resolution_height = global.resolution_height_no_fullscreen;
-global.resolution_scale = global.resolution_width / global.resolution_height;
+
+global.fullscreen = false;
+global.actually_fullscren = false;
+global.resolution_base = 480;
+
+global.resolution_scale = global.resolution_height / resolution_base;

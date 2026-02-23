@@ -114,6 +114,11 @@ stopped = function()
 {
     //Zerando suavemente o HSPD
     hspd = apr(hspd, 0, dcc);
+	
+	if (hspd == 0)
+	{
+		action = idle;
+	}
 }
 
 collision = function()

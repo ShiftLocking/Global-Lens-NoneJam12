@@ -1,7 +1,11 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-if (!global.stopped)
+var _dialogue = get_in_dialogue();
+
+show_debug_message(_dialogue);
+
+if (!global.stopped && !_dialogue)
 {
     move();
 }

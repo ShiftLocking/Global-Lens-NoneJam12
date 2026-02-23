@@ -44,6 +44,7 @@ function create_toast(_sprite, _text, _font, _layer, _posy, _object, _distance, 
                 t.new_toast.finy = _posy;
                 //Define a fonte
                 t.new_toast.font = _font;
+                
                 if (!is_undefined(_sound))
                 {
                     t.new_toast.sound = _sound;
@@ -63,6 +64,21 @@ function create_toast(_sprite, _text, _font, _layer, _posy, _object, _distance, 
                 {
                     //Fecha ele
                     t.new_toast.visible_toast = false;
+                }
+            }
+        }
+        
+        //Se a variavel não estiver indefinida
+        if (!is_undefined(t.new_toast))
+        {
+            //Caso o toast ainda existir
+            if (instance_exists(t.new_toast))
+            { 
+                if (!is_undefined(_skip_button))
+                {
+                    //Define a tecla de skip
+                    t.new_toast.skip_input = _skip_button;
+                    t.new_toast.interact_toast = true;
                 }
             }
         }

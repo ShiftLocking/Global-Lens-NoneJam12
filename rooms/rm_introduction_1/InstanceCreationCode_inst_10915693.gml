@@ -1,0 +1,1 @@
+view_target = obj_player_introduction_1;

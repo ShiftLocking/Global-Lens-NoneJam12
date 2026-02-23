@@ -118,7 +118,7 @@ function draw_toast(_ballonsprite, _text, _font)
     {
         var s = detection(skip_input);
         var _skip_marginx = 24;
-        var _skip_marginy = 12;
+        var _skip_marginy = 24;
         if (global.DIALOGUE)
         {
             skip_x = toastx + (width * _sprite_width) / 2 - _skip_marginx;

@@ -40,7 +40,7 @@ global.bind_icons = {
 
 /// @desc Essa função irá retornar a sprite da tecla colocada
 /// @param {Constant.VirtualKey or Constant.GamepadButton} _button Tecla que aparecerá
-function detection(_button, _movement = false, _horizontalorvertical = undefined, _rightorleft)
+function detection(_button, _movement = false, _horizontalorvertical = undefined, _rightorleft = undefined)
 {
     //Criando as variaveis no objeto
     if (!variable_instance_exists(id, "d"))
@@ -154,7 +154,7 @@ function detection(_button, _movement = false, _horizontalorvertical = undefined
     if (d.sprite != Keybinds && d.sprite != Joybinds)
     {
         //Anima ele de acordo com a velocidade do sprite dividindo por 1 segundo
-        d.subming += sprite_get_speed(d.sprite) / 120;
+        d.subming += sprite_get_speed(d.sprite) / game_get_speed(gamespeed_fps);
     }
     else //Caso não for
     {

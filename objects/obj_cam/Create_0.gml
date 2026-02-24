@@ -5,4 +5,4 @@ _x_to = undefined;
 _y_to = undefined;
 
 view_target = obj_player;
-view_speed = .08;
+view_speed = .1;

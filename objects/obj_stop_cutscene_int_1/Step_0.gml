@@ -9,5 +9,3 @@ if (_distance <= minimal_distance)
     instance_create_layer(x, y, layer, obj_cutscene_dialogue_int_1);
     instance_destroy();
 }
-
-show_debug_message(_distance);

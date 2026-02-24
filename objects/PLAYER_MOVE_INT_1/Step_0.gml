@@ -39,6 +39,8 @@ if (atual_action != action)
     atual_action = action;
 }
 
+gamepad_check();
+
 /*
 show_debug_message("Lens " + string(global.lens));
 show_debug_message("Stopped " + string(global.stopped));

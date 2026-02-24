@@ -24,6 +24,11 @@ function draw_toast(_ballonsprite, _text, _font)
     //Desenha o toast
     draw_sprite_ext(_ballonsprite, 0, toastx, toasty, xscale, yscale, sprite_angle, c_white, sprite_alpha);
     
+    if (sprite_bottom != undefined)
+    {
+        draw_sprite_ext(sprite_bottom, 0, toastx, toasty, clamp(xscale, 0, 1), clamp(xscale, 0, 1), sprite_angle, c_white, sprite_alpha);
+    }
+    
     //Converte a fonte em um asset
     var _index = asset_get_index(_font)
     

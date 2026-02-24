@@ -9,6 +9,7 @@ finy = 0;
 interact_toast = false;
 visible_toast = true;
 skip_input = undefined;
+sprite_bottom = undefined;
 
 //NÃO MEXA
 iniy = y;

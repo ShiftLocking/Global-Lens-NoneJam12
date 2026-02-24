@@ -34,3 +34,14 @@ else
 
 xscale = lerp(xscale, 0, .1);
 yscale = lerp(yscale, 0, .1);
+
+if (global.cutscene && instance_exists(obj_lens_effect))
+{
+    image_alpha = lerp(image_alpha, 0, .1);
+    alpha = 0;
+    audio_stop_sound(snd_peoples);
+}
+else 
+{
+	image_alpha = lerp(image_alpha, 1, .1);
+}

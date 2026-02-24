@@ -24,3 +24,6 @@ global.fullscreen = false; ;
 global.resolution_base = 480;
 
 global.resolution_scale = global.resolution_height / resolution_base;
+
+global.shake_width = 0;
+global.shake_height = 0;

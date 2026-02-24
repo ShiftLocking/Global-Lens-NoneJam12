@@ -8,9 +8,15 @@ if (instance_exists(target) && global.cutscene)
     	case "right" :
             target.hspd = apr(target.hspd, 1, .6);
         break
+    
+        case "stop" :
+            target.hspd = apr(target.hspd, 0, .4);
+        break
     }
 }
 else 
 {
 	instance_destroy();
+    global.cutscene_actions = [];
+    global.cutscene_atual_action = 0;
 }

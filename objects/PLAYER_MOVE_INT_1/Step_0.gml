@@ -3,8 +3,6 @@
 
 var _dialogue = get_in_dialogue();
 
-show_debug_message(_dialogue);
-
 if (!global.stopped && !_dialogue)
 {
     move();

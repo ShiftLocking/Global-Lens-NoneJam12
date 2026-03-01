@@ -1,1 +1,0 @@
-text = "VOCÊ CRIOU ISSO!";

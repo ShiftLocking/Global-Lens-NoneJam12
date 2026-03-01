@@ -16,7 +16,6 @@
     {"name":"inst_73B37525","path":"rooms/rm_section_1_bedroom/rm_section_1_bedroom.yy",},
     {"name":"inst_71787F18","path":"rooms/rm_section_1_bedroom/rm_section_1_bedroom.yy",},
     {"name":"inst_4E9E32A4","path":"rooms/rm_section_1_bedroom/rm_section_1_bedroom.yy",},
-    {"name":"inst_2F1B80B3","path":"rooms/rm_section_1_bedroom/rm_section_1_bedroom.yy",},
     {"name":"inst_1C0C7D30","path":"rooms/rm_section_1_bedroom/rm_section_1_bedroom.yy",},
     {"name":"inst_58D26D96","path":"rooms/rm_section_1_bedroom/rm_section_1_bedroom.yy",},
     {"name":"inst_784ABEFE","path":"rooms/rm_section_1_bedroom/rm_section_1_bedroom.yy",},
@@ -24,9 +23,7 @@
   ],
   "isDnd":false,
   "layers":[
-    {"$GMRInstanceLayer":"","%Name":"Debug","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
-        {"$GMRInstance":"v4","%Name":"inst_2F1B80B3","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2F1B80B3","objectId":{"name":"obj_fps","path":"objects/obj_fps/obj_fps.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":-32.0,"y":-32.0,},
-      ],"layers":[],"name":"Debug","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
+    {"$GMRInstanceLayer":"","%Name":"Debug","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"Debug","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Warn","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v4","%Name":"inst_DD59DA5","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_DD59DA5","objectId":{"name":"obj_pause_system","path":"objects/obj_pause_system/obj_pause_system.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":832.0,"y":0.0,},
       ],"layers":[],"name":"Warn","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},

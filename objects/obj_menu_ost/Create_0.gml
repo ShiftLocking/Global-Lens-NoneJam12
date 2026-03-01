@@ -2,5 +2,6 @@
 // You can write your code in this editor
 
 audio_stop_all();
-
 audio_play_sound(snd_menu_ost, 2, true, .15);
+alpha = 0;
+audio_sound_gain(snd_menu_ost, global.additional_music * alpha);

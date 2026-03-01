@@ -10,10 +10,6 @@ var _finished = get_toast_finished();
 
 if (_finished)
 {
-    global.shake_width = -2;
-    global.shake_height = -2;
-    audio_stop_sound(snd_shake_impact);
-    audio_play_sound(snd_shake_impact, 1, false, .01 * global.additional_sfx);
-    room_goto(rm_section_2);
+    instance_create_layer(obj_player.x, obj_player.y, layer, obj_limbo_dialogue3);
 	instance_destroy();
 }

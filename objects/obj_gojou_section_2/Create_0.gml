@@ -1,4 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-full = false;
+target = obj_player;
+
+outline_init();
+
+see = true;

@@ -10,10 +10,10 @@ var _finished = get_toast_finished();
 
 if (_finished)
 {
-    global.shake_width = -2;
-    global.shake_height = -2;
-    audio_stop_sound(snd_shake_impact);
-    audio_play_sound(snd_shake_impact, 1, false, .01 * global.additional_sfx);
-    room_goto(rm_section_2);
+    if (instance_exists(obj_control)) 
+    {
+        obj_control.no = true;
+        obj_control.time_dialogue = .5;
+    }
 	instance_destroy();
 }

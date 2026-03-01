@@ -71,6 +71,7 @@ if (surface_exists(surface))
             if (_input)
             {
                 create_transition(rm_menu, "Transitions", 2, , , .1);
+                reset_globals();
                 global.paused = false;
             }
         break;

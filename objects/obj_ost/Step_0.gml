@@ -3,3 +3,5 @@
 
 audio_sound_gain(music, global.additional_music);
 audio_sound_gain(sfx, global.additional_sfx);
+
+if (room == rm_menu) instance_destroy();

@@ -35,4 +35,6 @@ function reset_globals()
     global.visible_objects_lens = false;
     global.inside_object = false;
     global.activate_collision = false;
+    global.basement_dialogue = true;
+    global.panel = false;
 }

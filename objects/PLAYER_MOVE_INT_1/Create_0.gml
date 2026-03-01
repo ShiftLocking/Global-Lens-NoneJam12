@@ -121,6 +121,13 @@ stopped = function()
 	}
 }
 
+paused = function()
+{
+    image_speed = 0;
+    hspd = 0;
+    vspd = 0;
+}
+
 collision = function()
 {
     //Laço de repetição do número positivo do hspd

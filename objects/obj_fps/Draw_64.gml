@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 var dx = 16;
-var dy = display_get_gui_height() / 2;
+var dy = 0;
 var lh = 16;
 
 draw_set_color(c_white);

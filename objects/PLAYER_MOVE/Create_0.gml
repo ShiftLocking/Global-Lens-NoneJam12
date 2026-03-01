@@ -29,6 +29,8 @@ effect_done = false;
 
 atual_action = undefined;
 
+using_glasses = false;
+
 move = function()
 {
     //Pegando os inputs
@@ -54,7 +56,7 @@ move = function()
         else 
         {
             var _dir_sign = (global.direction == 0) ? 1 : -1;
-
+            
             // Só aplica se bater com d.Hdir
             if (sign(d.Hdir) == _dir_sign)
             {
@@ -105,13 +107,16 @@ move = function()
         
     
     //Se ele apertar para trocar
-    if (_change) action = change; //Define a ação
+    if (_change && global.change) action = change; //Define a ação
 }
 
 run = function()
 {
     what_state = "walk";
-    set_sprite(spr_player_run);
+    if (!using_glasses) set_sprite(spr_player_run);
+    else set_sprite(spr_player_run_lens);
+    
+    if (hspd < -3.9 && hspd > -4) hspd = -4;
     
     if (hspd >= 1 or hspd <= -1) 
     {
@@ -129,7 +134,8 @@ run = function()
 idle = function()
 {
     what_state = "idle";
-    set_sprite(spr_player_idle);
+    if (!using_glasses) set_sprite(spr_player_idle);
+    else set_sprite(spr_player_idle_lens);
     image_speed = 1;
     index = 0;
 }
@@ -148,14 +154,16 @@ jump = function()
         //Diminui a quantidade de pulos
         jump_count--;
     }
-    set_sprite(spr_player_jump);
+    if (!using_glasses) set_sprite(spr_player_jump);
+    else set_sprite(spr_player_jump_lens);
 }
 
 falling = function()
 {
     what_state = "falling";
     effect_yscale = lerp(effect_yscale, .2, .2);
-    set_sprite(spr_player_fall);
+    if (!using_glasses) set_sprite(spr_player_fall);
+    else set_sprite(spr_player_fall_lens);
 }
 
 change = function()
@@ -182,12 +190,15 @@ change = function()
             //Se a imagem atual do sprite for maior que a imagem total da sprite
             if (image_index > _image_amount)
             {
+                using_glasses = true;
                 //Os oculos são colocados
                 global.lens = true; 
                 //Desativa a variavel responsavel por parar o player
                 global.stopped = false;
                 //Ativa o efeito do oculos
                 global.lens_effect = true;
+                audio_stop_sound(snd_activating);
+                audio_play_sound(snd_activating, 1, false, .1 * global.additional_sfx);
                 //Reseta a ação
                 action = reset;
             }
@@ -215,6 +226,7 @@ change = function()
         global.stopped = true;
         global.activate_collision = false;
         what_state = "disabling";
+        using_glasses = false;
         //Se a imagem atual do sprite for maior que a imagem total da sprite
     	if (image_index > _image_amount)
         {
@@ -224,6 +236,8 @@ change = function()
             global.stopped = false;
             //Desativa o efeito do oculos
             global.lens_effect = false;
+            audio_stop_sound(snd_disabling);
+            audio_play_sound(snd_disabling, 1, false, .1 * global.additional_sfx);
             //Reseta a ação
             action = reset;
         }
@@ -235,6 +249,9 @@ push = function()
     what_state = "push";
     set_sprite(spr_player_push, index);
     image_speed = 1;
+    
+    if (hspd < -1.9 && hspd > -2) hspd = -2;
+    
     if (instance_exists(obj_box))
     {
         var _nereast = instance_nearest(x, y, obj_box);
@@ -249,12 +266,19 @@ push = function()
             with (_nereast)
             {
                 var _next = instance_place(x + sign(other.hspd), y, obj_box);
+                var _next2 = instance_place(x, y - 1, obj_box);
                 
                 if (_next != noone)
                 {
                     _next.hspd = other.hspd;
                 }
+                
+                if (_next2 != noone)
+                {
+                    _next2.hspd = other.hspd;
+                }
             }
+            
         }
     }
 }
@@ -323,6 +347,15 @@ stopped = function()
 {
     //Zerando suavemente o HSPD
     hspd = apr(hspd, 0, dcc);
+    
+    if (!global.stopped) if (hspd == 0) action = idle;
+}
+
+paused = function()
+{
+    image_speed = 0;
+    hspd = 0;
+    vspd = 0;
 }
 
 collision = function()

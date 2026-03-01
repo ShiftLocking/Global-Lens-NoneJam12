@@ -1,0 +1,16 @@
+/// @description Insert description here
+// You can write your code in this editor
+
+var _input = input("skip", , , , true);
+create_toast(spr_textbox, text, "fnt_dialogue", "Dialogues",
+target.y - target.sprite_height, target,
+128, false, spr_textboxbottom, snd_ramon_song, .8, 1.1, .06 * global.additional_voice, false, , , _input);
+
+var _finished = get_toast_finished();
+
+if (_finished)
+{
+    var _d = instance_create_layer(obj_gojou.x, obj_gojou.y, layer, obj_dialogue_gojou2);
+    _d.obj = obj_dialogue_basement4;
+	instance_destroy();
+}

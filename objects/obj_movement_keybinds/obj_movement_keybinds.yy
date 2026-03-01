@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Codes",
-    "path":"folders/Objects/Player/Cutscenes/Codes.yy",
+    "path":"folders/Objects/Player/Cutscenes/Introduction_1/Codes.yy",
   },
   "parentObjectId":null,
   "persistent":false,

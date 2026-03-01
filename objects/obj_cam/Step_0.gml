@@ -15,6 +15,22 @@ if (instance_exists(view_target))
 	camera_set_view_pos(view_camera[0], lerp(_p_x, _x_to, view_speed) + global.shake_width, lerp(_p_y, _y_to, view_speed) + global.shake_height);
 }
 
+event_user(0);
+
+if (global.fullscreen)
+{
+    global.resolution_width = global.resolution_width_fullscreen;
+    global.resolution_height = global.resolution_height_fullscreen;
+}
+else 
+{
+    global.resolution_width = global.resolution_width_no_fullscreen;
+    global.resolution_height = global.resolution_height_no_fullscreen;
+}
+
+uptade_scale_resolution();
+window_enable_borderless_fullscreen(global.borderless_fullscreen);
+window_set_fullscreen(global.fullscreen);
+
 global.shake_width = lerp(global.shake_width, 0, .1);
 global.shake_height = lerp(global.shake_height, 0, .1);
-

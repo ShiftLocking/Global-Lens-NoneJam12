@@ -3,3 +3,4 @@
 
 shake_timer = 0;
 shake_amount = 0;
+pitch = 1;

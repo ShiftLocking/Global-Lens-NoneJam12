@@ -7,7 +7,7 @@ global.interact = false;
 /// @param {Id.Instance} _id Objeto primario que será usado na distancia
 /// @param {Asset.GMSprite} _object Objeto secundario que será usado na distancia
 /// @param {Real} _distance Distancia minima para que o sprite possa ser desenhado
-function interact(_button, _positionx, _positiony, _id, _object, _distance)
+function interact(_button, _positionx, _positiony, _id, _object, _distance, _xscale = 1, _yscale = 1, _justhorizontal = false)
 {
     //Criando as variaveis no objeto
     if (!variable_instance_exists(id, "interact_state"))
@@ -18,11 +18,19 @@ function interact(_button, _positionx, _positiony, _id, _object, _distance)
     //Pegando a sprite do botão
     var _interact_bind = detection(_button);
     
-    //Pegando a distancia do objeto base em relação ao objeto secundario
-    interact_state.dist = point_distance(_id.x, _id.y, _object.x, _object.y);
+    if (!_justhorizontal)
+    {
+        //Pegando a distancia do objeto base em relação ao objeto secundario
+        interact_state.dist = point_distance(_id.x, _id.y, _object.x, _object.y);
+    }
+    else 
+    {
+    	//Pegando a distancia do objeto base em relação ao objeto secundario
+        interact_state.dist = point_distance(_id.x, 0, _object.x, 0);
+    }
     
     //Desenhando a sprite do botão
-    draw_sprite_ext(_interact_bind.sprite, _interact_bind.subming, _positionx, interact_state.posy, 1, 1, 0, c_white, interact_state.blend);
+    draw_sprite_ext(_interact_bind.sprite, _interact_bind.subming, _positionx, interact_state.posy, _xscale, _yscale, 0, c_white, interact_state.blend);
     
     //Caso a distancia for menor que a distancia dada
     if (interact_state.dist <= _distance)

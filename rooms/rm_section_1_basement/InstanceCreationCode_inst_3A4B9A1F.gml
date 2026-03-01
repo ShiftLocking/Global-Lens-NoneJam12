@@ -1,0 +1,1 @@
+text = "VOCÊ PRECISAVA DE UM SENTIDO";

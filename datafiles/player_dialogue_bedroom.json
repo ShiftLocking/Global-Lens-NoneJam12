@@ -1,0 +1,39 @@
+{
+    "dialogue1": 
+    [
+        "Foi... um [wave]sonho[/wave]?",
+        "Parecia muito realista",
+        "Quem era aquele homem? Ele me lembrava alguém",
+        "Ele me pôs um [#fc5757]óculos[/c] [delay, 200]na cara",
+        "E o ambiente mudou repentinamente...",
+        "Isso... foi [shake]estranho"
+    ],
+    "dialogue2":
+    [
+        "Esse [#fc5757]óculos[/c]...",
+        "O que isso está fazendo em minha casa?",
+        "Afinal... aquilo era mesmo um [wave]sonho[/wave]?",
+        "Não importa, vamos ver o que esse [#fc5757]óculos[/c] de fato faz"
+    ],
+    "dialogue3":
+    [
+        "Esse [#fccfff]papel[/c]? Eu não lembro dele estar aqui agora",
+        "Isso foi por causa do [#fc5757]óculos[/c]?",
+        "Não [delay, 200]importa, deixe-me ler o que está escrito aqui",
+        "Parece que esta carta é... é daquela pessoa que eu pedi um emprego"
+    ],
+    "dialogue4":
+    [
+        "''Ambos [delay, 100]os [#fc5757]mundos[/c] [delay, 100]vivam em [delay, 400][wave]harmônia[/wave]''?",
+        "Preciso fazer com que ambos os [#fc5757]mundos[/c] vivam em harmônia?!",
+        "E quem [shake]diabos[/shake] é esse ''[wave]Cara do [#fc5757]óculos[/c][/wave]''?",
+        "Será aquele cara que me deu esses [#fc5757]óculos[/c]?",
+        "Eu ainda devo estar sonhando..."
+    ],
+    "dialogue5":
+    [
+        "Essa porta não estava aqui agora pouco",
+        "O que [shake]diabos[/shake] está acontecendo aqui?",
+        "Realmente, eu ainda estou sonhando..."
+    ]
+}

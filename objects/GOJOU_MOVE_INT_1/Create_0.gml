@@ -101,13 +101,21 @@ giving = function()
             global.lens = true; 
             //Ativa o efeito do oculos
             global.lens_effect = true;
-            
+            audio_stop_sound(snd_activating);
+            audio_play_sound(snd_activating, 1, false, .1 * global.additional_sfx); 
         }
     }
     else 
     {
     	image_speed = 1;
     }
+}
+
+paused = function()
+{
+    image_speed = 0;
+    hspd = 0;
+    vspd = 0;
 }
 
 gravity_system = function()

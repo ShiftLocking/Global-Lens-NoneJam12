@@ -76,6 +76,7 @@ push_system = function()
             {
                 //Desativa o contorno
             	outline = false;
+                hspd = 0;
                 if (point_distance(0, _nereast.y, 0, instance_target.y) != 0)
                 {
                     global.push = false; //Desativa o modo de empurrar
@@ -118,7 +119,10 @@ collision = function()
         //Caso colidir na horizontal
         if (place_meeting(x + sign(hspd), y, obj_collision))
         {
-            if (global.push) break;
+            if (global.push) 
+            {
+                break;
+            }
             //Vai zerar o hspd
             hspd = 0;
             break; //E parar o código

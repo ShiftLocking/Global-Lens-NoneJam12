@@ -7,12 +7,12 @@ global.bind_icons = {
             ord("P"), ord("Q"), ord("R"), ord("S"), ord("T"),
             ord("U"), ord("V"), ord("W"), ord("X"), ord("Y"),
             ord("Z"), vk_shift, vk_control, vk_alt, vk_space,
-            mb_left, mb_right, mb_middle
+            mb_left, mb_right, mb_middle, vk_enter, vk_escape
         ],
         subming: [
             0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14,
             15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27,
-            28, 29, 30, 31, 32
+            28, 29, 30, 31, 32, 33, 34
         ],
     },
     joystick : {
@@ -105,7 +105,7 @@ function detection(_button, _movement = false, _horizontalorvertical = undefined
                     {
                         d.sprite = Axisrighthor;
                     }
-                    else 
+                    else if (_rightorleft == "left")
                     {
                     	d.sprite = Axislefthor;
                     }
@@ -116,10 +116,10 @@ function detection(_button, _movement = false, _horizontalorvertical = undefined
                     {
                         d.sprite = Axisrightver;
                     }
-                    else 
+                    else if (_rightorleft == "left")
                     {
                     	d.sprite = Axisleftver;
-                    }
+                    } 
                 break;
             }
         }

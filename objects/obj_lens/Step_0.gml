@@ -5,4 +5,5 @@ if (instance_exists(target))
 {
     x = target.x;
     y = target.y - target.sprite_height / 1.3;
+    image_xscale = target.dir;
 }

@@ -195,7 +195,7 @@ function load_options_keybinds(_binds, _font, _initialX, _initialY, _Hsep)
                     }
                     else 
                     {
-                    	create_warn(spr_textbox, "Esta tecla já está em uso", "fnt_menu", "Warn", 2, c_red, 1);
+                    	create_warn(spr_textwarn, "Esta tecla já está em uso", "fnt_warn", "Warn", 2, , 1);
                     }
                 }
             }
@@ -217,7 +217,7 @@ function load_options_keybinds(_binds, _font, _initialX, _initialY, _Hsep)
                 }
                 else
                 {
-                    create_warn(spr_textbox, "Este botão já está em uso", "fnt_menu", "Warn", 2, c_red, 1);
+                    create_warn(spr_textwarn, "Este botão já está em uso", "fnt_warn", "Warn", 2, , 1);
                 }
             }
         }
@@ -231,25 +231,27 @@ function load_options_keybinds(_binds, _font, _initialX, _initialY, _Hsep)
         var _hashs = variable_get_hash(_binds_array[i]);
         var _index = struct_get_from_hash(_binds, _hashs);
         
+        var _c;
+        
         if (_position == i)
         {
-            _scale = 1.2;
+            _c = make_colour_rgb(252, 87, 87)
         }
         else 
         {
-        	_scale = 1;
+        	_c = c_white;
         }
         
-        draw_text_transformed(_initialX, _initialY + _sep, _binds_array[i], _scale, _scale, 0);
+        draw_text_colour(_initialX, _initialY + _sep, _binds_array[i], _c, _c, _c, _c, 1);
         
         var _input = input(_index, , , , true);
         var s = detection(_input);
         
-        var _label = "<PRESS KEY>";
+        var _label = "<Pressione a Tecla>";
         
         if (global.rebinding && global.rebind_target == _binds_array[i])
         {
-            draw_text_transformed(_initialX + _Hsep, _initialY + _sep, _label, _scale, _scale, 1);
+            draw_text(_initialX + _Hsep, _initialY + _sep, _label);
         }
         else 
         {

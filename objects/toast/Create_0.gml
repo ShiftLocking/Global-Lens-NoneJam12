@@ -39,6 +39,7 @@ number_array = 0;
 array = false;
 lenght = 0;
 floating = true;
+identity = undefined;
 
 sound = undefined;
 pitch_min = 0;

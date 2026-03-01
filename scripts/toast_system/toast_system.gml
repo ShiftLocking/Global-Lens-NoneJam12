@@ -26,7 +26,10 @@ function draw_toast(_ballonsprite, _text, _font)
     
     if (sprite_bottom != undefined)
     {
-        draw_sprite_ext(sprite_bottom, 0, toastx, toasty, clamp(xscale, 0, 1), clamp(xscale, 0, 1), sprite_angle, c_white, sprite_alpha);
+        if (instance_exists(identity))
+        {
+            draw_sprite_ext(sprite_bottom, 0, identity.x, toasty, clamp(xscale, 0, 1), clamp(xscale, 0, 1), sprite_angle, c_white, sprite_alpha);
+        }
     }
     
     //Converte a fonte em um asset
@@ -190,55 +193,59 @@ function open_toast()
         
         if (interact_toast)
         {
-            skip_alpha = lerp(skip_alpha, 1, .2);
-            
-            if (input(_input, "pressed", "button"))
+            if (!global.paused)
             {
-                write_machine.skip();
+                skip_alpha = lerp(skip_alpha, 1, .2);
+                
+                if (input(_input, "pressed", "button"))
+                {
+                    write_machine.skip();
+                    if (_skip == 1)
+                    {
+                        skip_scalex = .8;
+                        skip_scaley = .8;
+                        //Caso o texto for um array
+                        if (array)
+                        {
+                            //Se o array for menor que o tamanho maximo do array
+                            if (number_array < lenght)
+                            {
+                                //Aumenta o numero do array
+                                number_array++;
+                                toastx = inix;
+                                //Reseta a maquina de escrever
+                                write_machine.reset();
+                            }
+                            else //Caso for igual
+                            {
+    							global.TOASTFINISHED = true;
+    							global.DIALOGUE = false;
+                                //Fecha o toast
+                            	visible_toast = false;
+                            }
+                        }
+                        else //Caso não for um array
+                        {
+                            //Fecha o toast
+                            visible_toast = false;
+                        }
+                    }
+                    else 
+                    {
+                    	skip_scalex = .8;
+                        skip_scaley = .8;
+                    }
+                }
+                
+                //Caso estiver terminado o texto
                 if (_skip == 1)
                 {
-                    skip_scalex = .8;
-                    skip_scaley = .8;
-                    //Caso o texto for um array
-                    if (array)
-                    {
-                        //Se o array for menor que o tamanho maximo do array
-                        if (number_array < lenght)
-                        {
-                            //Aumenta o numero do array
-                            number_array++;
-                            //Reseta a maquina de escrever
-                            write_machine.reset();
-                        }
-                        else //Caso for igual
-                        {
-							global.TOASTFINISHED = true;
-							global.DIALOGUE = false;
-                            //Fecha o toast
-                        	visible_toast = false;
-                        }
-                    }
-                    else //Caso não for um array
-                    {
-                        //Fecha o toast
-                        visible_toast = false;
-                    }
+                    skiped = true;
                 }
                 else 
                 {
-                	skip_scalex = .8;
-                    skip_scaley = .8;
+                	skiped = false;
                 }
-            }
-            
-            //Caso estiver terminado o texto
-            if (_skip == 1)
-            {
-                skiped = true;
-            }
-            else 
-            {
-            	skiped = false;
             }
         }
         else 

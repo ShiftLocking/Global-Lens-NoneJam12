@@ -48,6 +48,7 @@ function create_toast(_sprite, _text, _font, _layer, _posy, _object, _distance, 
                 t.new_toast.floating = _float;
                 //Define a parte de baixo da sprite
                 t.new_toast.sprite_bottom = _sprite_bottom;
+                t.new_toast.identity = id;
                 
                 if (!is_undefined(_sound))
                 {
@@ -129,6 +130,7 @@ function create_toast(_sprite, _text, _font, _layer, _posy, _object, _distance, 
                     t.new_toast.floating = _float;
                     //Define a parte de baixo da sprite
                     t.new_toast.sprite_bottom = _sprite_bottom
+                    t.new_toast.identity = id;
                     
                     if (!is_undefined(_sound))
                     {

@@ -6,8 +6,8 @@
   "name":"obj_player_introduction_1",
   "overriddenProperties":[],
   "parent":{
-    "name":"Cutscenes",
-    "path":"folders/Objects/Player/Cutscenes.yy",
+    "name":"Introduction_1",
+    "path":"folders/Objects/Player/Cutscenes/Introduction_1.yy",
   },
   "parentObjectId":{
     "name":"PLAYER_MOVE_INT_1",

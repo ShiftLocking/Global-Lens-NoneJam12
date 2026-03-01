@@ -1,0 +1,39 @@
+{
+    "dialogue1":
+    [
+        "Cara, essa foi por pouco!",
+        "Mas esse porão, eu não tenho um porão...",
+        "Preciso descobrir o que tem aqui",
+        "Talvez o óculos ajude"
+    ],
+    "dialogue2":
+    [
+        "Espera ai, você é aquele cara!",
+        "[shake]Quem é você?"
+    ],
+    "dialogue3":
+    [
+        "...",
+        "[wave]Oooi[/wave]?",
+        "Eu te perguntei quem é você!"
+    ],
+    "dialogue4":
+    [
+        "Esquece..."
+    ],
+    "dialogue5":
+    [
+        "Parece que isso é velho, mas funciona",
+        "Não consigo ligar ele agora",
+        "Parece que ele precisa ser ligado primeiro por uma alavanca"
+    ],
+    "dialogue6":
+    [
+        "Isso está muito alto",
+        "Preciso de algumas caixas"
+    ],
+    "dialogue7":
+    [
+        "Acho que isso irá servir"
+    ]
+}

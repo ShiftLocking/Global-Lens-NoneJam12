@@ -40,6 +40,7 @@ if (global.cutscene && instance_exists(obj_lens_effect))
     image_alpha = lerp(image_alpha, 0, .1);
     alpha = 0;
     audio_stop_sound(snd_peoples);
+    audio_stop_sound(snd_road);
 }
 else 
 {

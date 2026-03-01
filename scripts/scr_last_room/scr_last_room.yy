@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_last_room",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_last_room",
+  "parent":{
+    "name":"Scenes",
+    "path":"folders/Scenes.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

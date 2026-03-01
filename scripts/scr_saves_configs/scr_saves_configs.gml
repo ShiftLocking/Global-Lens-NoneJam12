@@ -22,7 +22,7 @@ function load_configs()
         global.additional_sfx = 1;
         global.additional_voice = 1;
         global.additional_music = 1;
-        global.fullscreen = false;
+        global.fullscreen = true;
         global.borderless_fullscreen = true;
         save_configs(); // já cria o arquivo bonitinho
         return;
@@ -40,10 +40,9 @@ function load_configs()
 
     var data = json_parse(json);
 
-    // safe load (não quebra se faltar campo)
     global.additional_sfx        = data.additional_sfx        ?? 1;
     global.additional_voice      = data.additional_voice      ?? 1;
     global.additional_music      = data.additional_music      ?? 1;
-    global.fullscreen            = data.fullscreen            ?? false;
+    global.fullscreen            = data.fullscreen            ?? true;
     global.borderless_fullscreen = data.borderless_fullscreen ?? true;
 }
